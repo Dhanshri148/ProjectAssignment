@@ -47,7 +47,7 @@ namespace cs_con_Library
                                         bool close = true;
                                         while (close)
                                         {
-                                            Console.WriteLine("\nMenu\n1)Borrow Book\n2)Search Book\n3)Return Book\n4)Borrow Book\n5)Display\n6)Close\n\n");
+                                            Console.WriteLine("\nMenu\n1)Get Book\n2)Search Book\n3)Return Book\n4)Borrow Book\n5)Display\n6)Close\n\n");
                                             Console.Write("Choose Your  option from menu:");
 
                                             int option = int.Parse(Console.ReadLine());
