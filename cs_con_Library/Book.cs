@@ -114,7 +114,25 @@ namespace cs_con_Library
             //Console.WriteLine(b);
         }
 
+        public static void IssueBook()
+        {
+            Book book = new Book();
+            Console.WriteLine("List of Issued book");
+            //book.bId = 1;
+            //book.bName = "Advanced Java";
+            bookList.Add(new Book (){bId= 1,bName="Advanced Java",bPrice=100});
+            bookList.Add(new Book() { bId = 2, bName = "Head First C#", bPrice = 200 });
 
+            foreach (Book b in bookList)
+            {
+                Console.Write("Issued Book Id:");
+                Console.WriteLine(b.bId);
+                Console.Write("Issued Book Name:");
+                Console.WriteLine(b.bName);
+
+            }
+
+        }
     }
 
 }

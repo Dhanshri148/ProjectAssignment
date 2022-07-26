@@ -101,7 +101,7 @@ namespace cs_con_Library
                                     }
                                     else if (option == 2)
                                     {
-                                        Librarian.IssueBook();
+                                         Book.IssueBook();
                                     }
                                     else if (option == 3)
                                     {

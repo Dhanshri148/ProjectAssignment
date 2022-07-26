@@ -15,17 +15,11 @@ namespace cs_con_Library
         public DateTime issueDate;
 
         static List<Book> bookList = new List<Book>();
-        public static void IssueBook()
-        {
-            Book book = new Book();
-            Console.WriteLine("List of Issued book");
-            bookList.Add(book);
-           
-        }
+        
 
         public static void GetBookFromBorrower()
         {
-
+            
         }
 
         public static void SearchBookForBorrower()
@@ -51,7 +45,7 @@ namespace cs_con_Library
         {
 
             Book book = new Book();
-            Console.WriteLine("Enter Foloowing Details:");
+            Console.WriteLine("Enter Following Details:");
 
             Console.Write("Book Id:");
             int returnId = int.Parse(Console.ReadLine());
