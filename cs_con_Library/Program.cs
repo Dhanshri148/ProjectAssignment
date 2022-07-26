@@ -15,19 +15,23 @@ namespace cs_con_Library
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Select who are you:");
-            Console.WriteLine("1.Borrower\n2.Librarian\n3.Exit");
+            Console.WriteLine("\n\n************   Library Management System  *************** ");
+            Console.WriteLine("\n  Select who are you:");
+            Console.WriteLine("\n     1.Borrower\n     2.Librarian\n     3.Exit");
 
-            Console.WriteLine("Enter value:");
+            Console.Write("\nEnter value:");
             int value = int.Parse(Console.ReadLine());
             switch (value)
             {
                 case 1:
                     {
-
-                        Console.WriteLine("Welcome in Library!!");
+                        Console.WriteLine("----------------------------------------------------");
+                        Console.WriteLine("                    Welcome in Library!!    ");
+                        Console.WriteLine("----------------------------------------------------");
                         Console.Write("Enter your Password : ");
                         string password = Console.ReadLine();
+
+                        //check condition password matched then go inside if block
                         if (password == "pass")
                         {
 
@@ -92,7 +96,7 @@ namespace cs_con_Library
                                         bool close = true;
                                         while (close)
                                         {
-                                            Console.WriteLine("\nMenu\n1)Borrow Newspaper\n2)Return Newspaper \n3)Close\n\n");
+                                            Console.WriteLine("\nMenu\n1)Borrow Newspaper\n2)Return Newspaper \n3)Display paper name\n4)Close\n\n");
                                             Console.Write("Choose Your  option from menu:");
 
                                             int option = int.Parse(Console.ReadLine());
@@ -106,7 +110,11 @@ namespace cs_con_Library
                                             {
                                                 Newspaper.Return();                         //call Return method
                                             }
-                                            else if (option == 3)
+                                            else if(option == 3)
+                                            {
+                                                Newspaper.DisplayNewspaper();
+                                            }
+                                            else if (option == 4)
                                             {
                                                 Console.WriteLine("Thank You");
                                                 close = false;
@@ -121,56 +129,67 @@ namespace cs_con_Library
                                         }
                                     }
                                     break;
+                                case 3:
+                                    {
+                                        Console.WriteLine("Invalid Choice");
+                                    }
+                                    break;
                             }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid Password ");
                         }
                            
                     }
-                        break;
+                    break;
                 case 2:
                     {
                         Console.WriteLine("Welcome in Library!!");
+                        Console.WriteLine("**************************************************************");
                         Console.Write("Enter your Password : ");
                         string password = Console.ReadLine();
-                        bool enter = true;
-                        while (enter)
+
+                        if (password == "pass123")
                         {
-
-                            if (password == "pass123")
+                            bool close = true;
+                            while (close)
                             {
-                                bool close = true;
-                                while (close)
+                                Console.WriteLine("\n\nMenu\n1)Search Book\n2)Issue Book\n3)Get Book from borrower\n4)Close\n\n");
+                                Console.Write("Choose Your  option from menu:");
+
+                                int option = int.Parse(Console.ReadLine());
+
+                                if (option == 1)
                                 {
-                                    Console.WriteLine("\nMenu\n1)Search Book\n2)Issue Book\n3)Get Book from borrower\n4)Close\n\n");
-                                    Console.WriteLine("Choose Your  option from menu:");
-
-                                    int option = int.Parse(Console.ReadLine());
-
-                                    if (option == 1)
-                                    {
-                                        Librarian.SearchBookForBorrower();                  //Search book for the Borrower
-                                    }
-                                    else if (option == 2)
-                                    {
-                                         Book.IssueBook();                                  //Issued book list
-                                    }
-                                    else if (option == 3)
-                                    {
-                                        Librarian.AddBookAfterReceiving();                  //Add book after receiving from Borrower
-                                    }
-                                    else if (option == 4)
-                                    {
-                                        Console.WriteLine("Thank You");                     
-                                        close = false;
-                                        break;
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("Invalid Value");
-                                    }
-                                    Console.ReadLine();
+                                    Librarian.SearchBookForBorrower();                  //Search book for the Borrower
                                 }
+                                else if (option == 2)
+                                {
+                                    Book.IssueBook();                                  //Issued book list
+                                }
+                                else if (option == 3)
+                                {
+                                    Librarian.AddBookAfterReceiving();                  //Add book after receiving from Borrower
+                                }
+                                else if (option == 4)
+                                {
+                                    Console.WriteLine("Thank You");
+                                    close = false;
+                                    break;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Invalid Value");
+                                }
+                                Console.ReadLine();
                             }
                         }
+                        else
+                        {
+                            Console.WriteLine("Invalid Password");
+                        }
+                        
                     }
                     break;
 

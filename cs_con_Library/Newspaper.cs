@@ -14,17 +14,16 @@ namespace cs_con_Library
 
         public static void GetNewspaper()
         {
-           
-            Console.Write("Newspaper Name:");
-            news.Name = Console.ReadLine();
-
-            news.PaperDate = DateTime.Now;
-            Console.WriteLine("Date-{0} and Time-{1}", news.PaperDate.ToShortDateString(), news.PaperDate.ToShortTimeString());
             
-            newsList.Add(new Newspaper() { Name = "Lokmat" });
-            newsList.Add(new Newspaper() { Name = "Indian Express" });
+                Console.Write("Newspaper Name:");
+                news.Name = Console.ReadLine();
 
-            newsList.Add(news);
+                news.PaperDate = DateTime.Now;
+                Console.WriteLine("Date-{0} and Time-{1}", news.PaperDate.ToShortDateString(), news.PaperDate.ToShortTimeString());
+
+            
+                newsList.Add(news);
+            
         }
 
         public static void Return()
@@ -42,6 +41,16 @@ namespace cs_con_Library
             else
             {
                 Console.WriteLine("Newspaper not found:{0}",name);
+            }
+        }
+
+        public static void DisplayNewspaper()
+        {
+            foreach (Newspaper n in newsList)
+            {
+                Console.Write("Newspaper name:");
+                Console.WriteLine(n.Name);
+               
             }
         }
 
