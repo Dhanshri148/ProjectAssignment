@@ -108,11 +108,11 @@ namespace cs_con_Library
 
                                             else if (option == 2)
                                             {
-                                                Newspaper.Return();                         //call Return method
+                                                Newspaper.Return();                             //call Return method
                                             }
                                             else if(option == 3)
                                             {
-                                                Newspaper.DisplayNewspaper();
+                                                Newspaper.DisplayNewspaper();                   //Display available newspaper
                                             }
                                             else if (option == 4)
                                             {

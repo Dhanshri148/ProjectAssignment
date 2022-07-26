@@ -17,14 +17,10 @@ namespace cs_con_Library
         static List<Book> bookList = new List<Book>();
         
 
-        public static void GetBookFromBorrower()
-        {
-            
-        }
-
         public static void SearchBookForBorrower()                   
         {
             Book book = new Book();
+
             Console.WriteLine("Search book by id");
             string find = Console.ReadLine();
 
@@ -53,24 +49,9 @@ namespace cs_con_Library
             Console.WriteLine("Number of Books:");
             int returnCount = int.Parse(Console.ReadLine());
 
-            if (bookList.Exists(y => y.bId == returnId))
-            {
-                foreach (Book addReturnBookCount in bookList)
-                {
-                    if (addReturnBookCount.x >= returnCount + addReturnBookCount.bCount)
-                    {
-                        if (addReturnBookCount.bId == returnId)
-                        {
-                            addReturnBookCount.bCount = addReturnBookCount.bCount + returnCount;
-                            break;
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Book Id {0} not found", returnId);
-                    }
-                }
-            }
+            bookList.Add(book);
+
+            Console.WriteLine("Book received successfully");
         }
     }
 }
