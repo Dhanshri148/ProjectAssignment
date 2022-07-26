@@ -26,15 +26,15 @@ namespace cs_con_Library
         {
             Book book = new Book();
             Console.WriteLine("Search book by id");
-            int find = int.Parse(Console.ReadLine());
+            string find = Console.ReadLine();
 
-            if (bookList.Exists(x => x.bId == find))
+            if (bookList.Exists(x => x.bName == find))
             {
-                foreach (Book searchId in bookList)
+                foreach (Book b in bookList)
                 {
-                    if (searchId.bId == find)
+                    if (b.bName == find)
                     {
-                        Console.WriteLine("Book id:{0}\nBook name:{1}\nBook Price:{2} \n Book count{3}", searchId.bId, searchId.bName, searchId.bPrice, searchId.bCount);
+                        Console.WriteLine("Book id:{0}\nBook name:{1}\nBook Price:{2} \n Book count{3}", b.bId, b.bName, b.bPrice, b.bCount);
 
                     }
                 }
