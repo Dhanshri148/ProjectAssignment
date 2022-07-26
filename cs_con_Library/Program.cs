@@ -220,37 +220,37 @@ namespace cs_con_Library
               Console.Write("Book Name:");
               borrow.userName = Console.ReadLine();
 
-                Console.Write("Address:");
-                borrow.address = Console.ReadLine();
+              Console.Write("Address:");
+              borrow.address = Console.ReadLine();
 
-                borrow.borrowDate = DateTime.Now;
-                Console.WriteLine("Date-{0} and Time-{1}", borrow.borrowDate.ToShortDateString(), borrow.borrowDate.ToShortTimeString());
+              borrow.borrowDate = DateTime.Now;
+              Console.WriteLine("Date-{0} and Time-{1}", borrow.borrowDate.ToShortDateString(), borrow.borrowDate.ToShortTimeString());
 
-                if (bookList.Exists(x => x.bId == borrow.borrowerBookId))
-                {
-                    foreach (Book searchId in bookList)
+              if (bookList.Exists(x => x.bId == borrow.borrowerBookId))
+              {
+                 foreach (Book searchId in bookList)
+                 {
+                     if (searchId.bCount >= searchId.bCount - borrow.borrowCount && searchId.bCount - borrow.borrowCount >= 0)
+                     {
+                        if (searchId.bId == borrow.borrowerBookId)
+                        {
+                             searchId.bCount = searchId.bCount - borrow.borrowCount;
+                             break;
+                        }
+                     }
+                    else
                     {
-                        if (searchId.bCount >= searchId.bCount - borrow.borrowCount && searchId.bCount - borrow.borrowCount >= 0)
-                        {
-                            if (searchId.bId == borrow.borrowerBookId)
-                            {
-                                searchId.bCount = searchId.bCount - borrow.borrowCount;
-                                break;
-                            }
-                        }
-                        else
-                        {
-                            Console.WriteLine("Only {0} books are found", searchId.bCount);
-                            break;
-                        }
+                        Console.WriteLine("Only {0} books are found", searchId.bCount);
+                        break;
                     }
-                }
-                else
-                {
+                 }
+              }
+              else
+              {
                     Console.WriteLine("Book Id {0} not found", borrow.borrowerBookId);
-                }
-                borrowers.Add(borrow);
-            }
+              }
+              borrowers.Add(borrow);
+        }
         
 
     }
