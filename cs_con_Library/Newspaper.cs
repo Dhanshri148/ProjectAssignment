@@ -12,22 +12,21 @@ namespace cs_con_Library
             new Newspaper{Name = "Lokmat"},
             new Newspaper{Name = "The Hindu"}
         };
+
         static Newspaper news = new Newspaper();
         public string Name;
         public DateTime PaperDate;
 
-
         public static void GetNewspaper()
         {
             
-                Console.Write("Newspaper Name:");
-                news.Name = Console.ReadLine();
+            Console.Write("Newspaper Name:");
+            news.Name = Console.ReadLine();
 
-                news.PaperDate = DateTime.Now;
-                Console.WriteLine("Date-{0} and Time-{1}", news.PaperDate.ToShortDateString(), news.PaperDate.ToShortTimeString());
+            news.PaperDate = DateTime.Now;
+            Console.WriteLine("Date-{0} and Time-{1}", news.PaperDate.ToShortDateString(), news.PaperDate.ToShortTimeString());
 
-            
-                newsList.Add(news);
+            newsList.Add(news);
             Console.WriteLine("Paper given to Reader");
             
         }

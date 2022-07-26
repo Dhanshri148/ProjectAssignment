@@ -40,6 +40,7 @@ namespace cs_con_Library
                             Console.WriteLine("------------------------------------------------------------");
                             Console.WriteLine("Enter value:");
                             int choice = int.Parse(Console.ReadLine());
+
                             switch (choice)
                             {
                                 case 1:
@@ -67,14 +68,17 @@ namespace cs_con_Library
 
                                                 Book.ReturnBook();                      //call ReturnBook method
                                             }
+
                                             else if (option == 4)
                                             {
                                                 Borrow();                                //call Borrow method
                                             }
+
                                             else if (option == 5)
                                             {
                                                 Book.Display();                         //call Display method
                                             }
+
                                             else if (option == 6)
                                             {
                                                 Console.WriteLine("Thank You");
@@ -110,10 +114,12 @@ namespace cs_con_Library
                                             {
                                                 Newspaper.Return();                             //call Return method
                                             }
+
                                             else if(option == 3)
                                             {
                                                 Newspaper.DisplayNewspaper();                   //Display available newspaper
                                             }
+
                                             else if (option == 4)
                                             {
                                                 Console.WriteLine("Thank You");
@@ -143,6 +149,8 @@ namespace cs_con_Library
                            
                     }
                     break;
+
+
                 case 2:
                     {
                         Console.WriteLine();

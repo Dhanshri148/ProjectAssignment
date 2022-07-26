@@ -19,21 +19,26 @@ namespace cs_con_Library
 
         public static void SearchBookForBorrower()                   
         {
+
             Book book = new Book();
-
             Console.WriteLine("Search book by id");
-            string find = Console.ReadLine();
+            int find = int.Parse(Console.ReadLine());
 
-            if (bookList.Exists(x => x.bName == find))
+            if (bookList.Exists(x => x.bId == find))
             {
-                foreach (Book b in bookList)
+                foreach (Book searchId in bookList)
                 {
-                    if (b.bName == find)
+                    if (searchId.bId == find)
                     {
-                        Console.WriteLine("Book id:{0}\nBook name:{1}\nBook Price:{2} \n Book count{3}", b.bId, b.bName, b.bPrice, b.bCount);
+                        Console.WriteLine("Book id:{0}\nBook name:{1}\nBook Price:{2}\nBook count:{3}", searchId.bId, searchId.bName, searchId.bPrice, searchId.bCount);
 
                     }
                 }
+                Console.WriteLine("Book Found");
+            }
+            else
+            {
+                Console.WriteLine("Book id {0} not found", find);
             }
         }
 
