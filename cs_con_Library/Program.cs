@@ -7,9 +7,11 @@ namespace cs_con_Library
     {
         static List<Book> bookList = new List<Book>();
         static List<Borrower> borrowers = new List<Borrower>();
+        static List<Newspaper> newsList = new List<Newspaper>();
 
         static Book book = new Book();
         static Borrower borrower = new Borrower();
+        static Newspaper news = new Newspaper();
 
         static void Main(string[] args)
         {
@@ -22,60 +24,108 @@ namespace cs_con_Library
             {
                 case 1:
                     {
+
                         Console.WriteLine("Welcome in Library!!");
                         Console.Write("Enter your Password : ");
                         string password = Console.ReadLine();
                         if (password == "pass")
                         {
-                            bool close = true;
-                            while (close)
+
+                            Console.WriteLine("Select your choice:");
+                            Console.WriteLine("1.Book\n2.Newspaper\n3.Exit");
+                            Console.WriteLine("------------------------------------------------------------");
+                            Console.WriteLine("Enter value:");
+                            int choice = int.Parse(Console.ReadLine());
+                            switch (choice)
                             {
-                                Console.WriteLine("\nMenu\n1)Borrow Book\n2)Search Book\n3)Return Book\n4)Borrow Book\n5)Display\n6)Close\n\n");
-                                Console.Write("Choose Your  option from menu:");
+                                case 1:
+                                    {
+                                        bool close = true;
+                                        while (close)
+                                        {
+                                            Console.WriteLine("\nMenu\n1)Borrow Book\n2)Search Book\n3)Return Book\n4)Borrow Book\n5)Display\n6)Close\n\n");
+                                            Console.Write("Choose Your  option from menu:");
 
-                                int option = int.Parse(Console.ReadLine());
+                                            int option = int.Parse(Console.ReadLine());
 
-                                if (option == 1)
-                                {
-                                    Book.GetBook();
-                                }
+                                            if (option == 1)
+                                            {
+                                                Book.GetBook();                         //Call GetBook method
+                                            }
 
-                                else if (option == 2)
-                                {
-                                    Book.SearchBook();
-                                }
+                                            else if (option == 2)
+                                            {
+                                                Book.SearchBook();                      //call SearchBook method
+                                            }
 
-                                else if (option == 3)
-                                {
-                                    //Book.RemoveBook();
-                                    Book.ReturnBook();
-                                }
-                                else if(option == 4)
-                                {
-                                    Borrow();
-                                }
-                                else if (option == 5)
-                                {
-                                    Book.Display();
-                                }
-                                else if (option == 6)
-                                {
-                                    Console.WriteLine("Thank You");
-                                    close = false;
+                                            else if (option == 3)
+                                            {
+
+                                                Book.ReturnBook();                      //call ReturnBook method
+                                            }
+                                            else if (option == 4)
+                                            {
+                                                Borrow();                                //call Borrow method
+                                            }
+                                            else if (option == 5)
+                                            {
+                                                Book.Display();                         //call Display method
+                                            }
+                                            else if (option == 6)
+                                            {
+                                                Console.WriteLine("Thank You");
+                                                close = false;
+                                                break;
+                                            }
+
+                                            else
+                                            {
+                                                Console.WriteLine("Invalid Operation!!!");
+                                            }
+                                            Console.ReadLine();
+                                        }
+                                    }
                                     break;
-                                }
 
-                                else
-                                {
-                                    Console.WriteLine("Invalid Operation!!!");
-                                }
-                                Console.ReadLine();
+                                case 2:
+                                    {
+                                        bool close = true;
+                                        while (close)
+                                        {
+                                            Console.WriteLine("\nMenu\n1)Borrow Newspaper\n2)Return Newspaper \n3)Close\n\n");
+                                            Console.Write("Choose Your  option from menu:");
+
+                                            int option = int.Parse(Console.ReadLine());
+
+                                            if (option == 1)
+                                            {
+                                                Newspaper.GetNewspaper();                         //Call GetNewspaper method
+                                            }
+
+                                            else if (option == 2)
+                                            {
+                                                Newspaper.Return();                         //call Return method
+                                            }
+                                            else if (option == 3)
+                                            {
+                                                Console.WriteLine("Thank You");
+                                                close = false;
+                                                break;
+                                            }
+
+                                            else
+                                            {
+                                                Console.WriteLine("Invalid Operation!!!");
+                                            }
+                                            Console.ReadLine();
+                                        }
+                                    }
+                                    break;
                             }
                         }
-
+                           
                     }
-                    break;
-
+                        break;
                 case 2:
                     {
                         Console.WriteLine("Welcome in Library!!");
@@ -97,19 +147,19 @@ namespace cs_con_Library
 
                                     if (option == 1)
                                     {
-                                        Librarian.SearchBookForBorrower();
+                                        Librarian.SearchBookForBorrower();                  //Search book for the Borrower
                                     }
                                     else if (option == 2)
                                     {
-                                         Book.IssueBook();
+                                         Book.IssueBook();                                  //Issued book list
                                     }
                                     else if (option == 3)
                                     {
-                                        Librarian.AddBookAfterReceiving();
+                                        Librarian.AddBookAfterReceiving();                  //Add book after receiving from Borrower
                                     }
                                     else if (option == 4)
                                     {
-                                        Console.WriteLine("Thank You");
+                                        Console.WriteLine("Thank You");                     
                                         close = false;
                                         break;
                                     }
