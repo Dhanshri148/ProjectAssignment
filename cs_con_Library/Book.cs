@@ -27,6 +27,8 @@ namespace cs_con_Library
             Console.Write("Number of Books:");
             book.x = book.bCount = int.Parse(Console.ReadLine());
             bookList.Add(book);
+
+            Console.WriteLine("Book Added successfully");
         }
         public static void RemoveBook()
         {
