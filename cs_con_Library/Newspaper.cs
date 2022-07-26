@@ -6,7 +6,12 @@ namespace cs_con_Library
 {
     internal class Newspaper
     {
-        static List<Newspaper> newsList = new List<Newspaper>();
+        static List<Newspaper> newsList = new List<Newspaper>()
+        {
+            new Newspaper{Name = "Indian Express"},
+            new Newspaper{Name = "Lokmat"},
+            new Newspaper{Name = "The Hindu"}
+        };
         static Newspaper news = new Newspaper();
         public string Name;
         public DateTime PaperDate;
@@ -23,6 +28,7 @@ namespace cs_con_Library
 
             
                 newsList.Add(news);
+            Console.WriteLine("Paper given to Reader");
             
         }
 

@@ -13,7 +13,15 @@ namespace cs_con_Library
         public int x;
 
         static List<Borrower> borrowers = new List<Borrower>();
-        static List<Book> bookList = new List<Book>();
+        static List<Book> bookList = new List<Book>()
+        {
+            new Book{bId = 1, bName = "Advanced Java",bPrice= 100},
+            new Book{bId = 2, bName = "Head First C#",bPrice= 200},
+            new Book{bId = 3, bName = "SQL",bPrice= 300},
+            new Book{bId = 4, bName = "Math",bPrice= 400},
+            new Book{bId = 5, bName = "Science",bPrice= 500},
+            new Book{bId = 6, bName = "Concrete Technology",bPrice= 350}
+        };
      
 
         public static void GetBook()
