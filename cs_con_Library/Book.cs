@@ -58,7 +58,7 @@ namespace cs_con_Library
         public static void SearchBook()
         {
             Book book = new Book();
-            Console.WriteLine("Search book by id");
+            Console.Write("Search book by id");
             int find = int.Parse(Console.ReadLine());
 
             if (bookList.Exists(x => x.bId == find))

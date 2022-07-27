@@ -21,7 +21,7 @@ namespace cs_con_Library
         {
 
             Book book = new Book();
-            Console.WriteLine("Search book by id");
+            Console.Write("Search book by id");
             int find = int.Parse(Console.ReadLine());
 
             if (bookList.Exists(x => x.bId == find))
@@ -30,11 +30,12 @@ namespace cs_con_Library
                 {
                     if (searchId.bId == find)
                     {
-                        Console.WriteLine("Book id:{0}\nBook name:{1}\nBook Price:{2}\nBook count:{3}", searchId.bId, searchId.bName, searchId.bPrice, searchId.bCount);
+                        Console.WriteLine("Book id:{0}\nBook name:{1}\nBook Price:{2}", searchId.bId, searchId.bName, searchId.bPrice);
 
                     }
+                    Console.WriteLine("Book Found");
                 }
-                Console.WriteLine("Book Found");
+                
             }
             else
             {
