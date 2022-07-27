@@ -36,9 +36,10 @@ namespace cs_con_Library
                         {
 
                             Console.WriteLine("Select your choice:");
-                            Console.WriteLine("1.Book\n2.Newspaper\n3.Exit");
-                            Console.WriteLine("------------------------------------------------------------");
-                            Console.WriteLine("Enter value:");
+                            Console.WriteLine("---------------------------------------------------------");
+                            Console.WriteLine("     1.Book\n     2.Newspaper\n     3.Exit");
+                            Console.WriteLine("---------------------------------------------------------");
+                            Console.Write("Enter value:");
                             int choice = int.Parse(Console.ReadLine());
 
                             switch (choice)
@@ -48,7 +49,7 @@ namespace cs_con_Library
                                         bool close = true;
                                         while (close)
                                         {
-                                            Console.WriteLine("\nMenu\n1)Get Book\n2)Search Book\n3)Return Book\n4)Borrow Book\n5)Display\n6)Close\n\n");
+                                            Console.WriteLine("\n*****Menu*****\n     1)Get Book\n     2)Search Book\n     3)Return Book\n     4)Remove Book\n     5)Display\n     6)Close\n\n");
                                             Console.Write("Choose Your  option from menu:");
 
                                             int option = int.Parse(Console.ReadLine());
@@ -71,7 +72,7 @@ namespace cs_con_Library
 
                                             else if (option == 4)
                                             {
-                                                Borrow();                                //call Borrow method
+                                                Book.RemoveBook();                                //call Borrow method
                                             }
 
                                             else if (option == 5)
